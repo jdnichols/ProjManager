@@ -17,8 +17,7 @@ import java.net.Socket;
 public class ProjectManagerServer {
     
     public static void main(String[] args) throws IOException{
-        ServerSocket listener = new ServerSocket(9090);
-        try{
+        try(ServerSocket listener = new ServerSocket(9090)) {
             while(true){
                 Socket socket = listener.accept();
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
@@ -27,9 +26,6 @@ public class ProjectManagerServer {
                 
             }
             
-        }
-        finally{
-            listener.close();
         }   
         
     }

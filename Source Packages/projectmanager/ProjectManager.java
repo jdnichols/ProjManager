@@ -6,6 +6,7 @@
 package projectmanager;
 
 import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.logging.Level;
@@ -54,6 +55,12 @@ public class ProjectManager extends Application {
             public void handle(ActionEvent event) {
                 try {
                     Socket s = new Socket(iptxt.getText(),portnumber = Integer.parseInt(porttxt.getText()));
+                    PrintWriter out = new PrintWriter(s.getOutputStream(),true);
+                    BufferedReader in = new BufferedReader(
+                        new InputStreamReader(s.getInputStream()));
+                    BufferedReader stdIn = new BufferedReader(
+                        new InputStreamReader(System.in));
+                
                 }
                 catch(UnknownHostException e){
                     System.out.println(e);

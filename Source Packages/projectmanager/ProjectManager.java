@@ -60,7 +60,7 @@ public class ProjectManager extends Application {
                         new InputStreamReader(s.getInputStream()));
                     BufferedReader stdIn = new BufferedReader(
                         new InputStreamReader(System.in));
-                
+                    out.println(nicktxt.getText());
                 }
                 catch(UnknownHostException e){
                     System.out.println(e);
@@ -93,12 +93,12 @@ public class ProjectManager extends Application {
         root.getChildren().add(iplabel);
         root.getChildren().add(socketlabel);
         root.setPadding(new Insets(10,10,10,10));
-        root.setVgap(5);
-        root.setHgap(5);
+        root.setVgap(10);
+        root.setHgap(10);
         
         Scene scene = new Scene(root, 300, 180);
         
-        primaryStage.setTitle("Project Manager");
+        primaryStage.setTitle("Connect to Server");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
